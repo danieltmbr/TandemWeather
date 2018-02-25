@@ -13,6 +13,11 @@
 		E23F61222042C0C60000BF52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E23F61212042C0C60000BF52 /* Assets.xcassets */; };
 		E23F61252042C0C60000BF52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23F61232042C0C60000BF52 /* LaunchScreen.storyboard */; };
 		E23F61302042C0C60000BF52 /* TandemForecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F612F2042C0C60000BF52 /* TandemForecastTests.swift */; };
+		E23F613D2042C13B0000BF52 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F613C2042C13B0000BF52 /* Forecast.swift */; };
+		E23F613F2042C2180000BF52 /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F613E2042C2180000BF52 /* ForecastData.swift */; };
+		E23F61412042C35C0000BF52 /* MainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F61402042C35C0000BF52 /* MainInfo.swift */; };
+		E23F61432042C5590000BF52 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F61422042C5590000BF52 /* Weather.swift */; };
+		E23F61452042CB2A0000BF52 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F61442042CB2A0000BF52 /* City.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,11 @@
 		E23F612B2042C0C60000BF52 /* TandemForecastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TandemForecastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E23F612F2042C0C60000BF52 /* TandemForecastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TandemForecastTests.swift; sourceTree = "<group>"; };
 		E23F61312042C0C60000BF52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E23F613C2042C13B0000BF52 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		E23F613E2042C2180000BF52 /* ForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastData.swift; sourceTree = "<group>"; };
+		E23F61402042C35C0000BF52 /* MainInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInfo.swift; sourceTree = "<group>"; };
+		E23F61422042C5590000BF52 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		E23F61442042CB2A0000BF52 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +87,7 @@
 		E23F61192042C0C60000BF52 /* TandemForecast */ = {
 			isa = PBXGroup;
 			children = (
+				E23F613A2042C10A0000BF52 /* Networking */,
 				E23F611A2042C0C60000BF52 /* AppDelegate.swift */,
 				E23F611C2042C0C60000BF52 /* ViewController.swift */,
 				E23F611E2042C0C60000BF52 /* Main.storyboard */,
@@ -94,6 +105,26 @@
 				E23F61312042C0C60000BF52 /* Info.plist */,
 			);
 			path = TandemForecastTests;
+			sourceTree = "<group>";
+		};
+		E23F613A2042C10A0000BF52 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E23F613B2042C1190000BF52 /* Models */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E23F613B2042C1190000BF52 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E23F613C2042C13B0000BF52 /* Forecast.swift */,
+				E23F613E2042C2180000BF52 /* ForecastData.swift */,
+				E23F61402042C35C0000BF52 /* MainInfo.swift */,
+				E23F61422042C5590000BF52 /* Weather.swift */,
+				E23F61442042CB2A0000BF52 /* City.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +230,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E23F61412042C35C0000BF52 /* MainInfo.swift in Sources */,
 				E23F611D2042C0C60000BF52 /* ViewController.swift in Sources */,
+				E23F613D2042C13B0000BF52 /* Forecast.swift in Sources */,
+				E23F613F2042C2180000BF52 /* ForecastData.swift in Sources */,
+				E23F61432042C5590000BF52 /* Weather.swift in Sources */,
 				E23F611B2042C0C60000BF52 /* AppDelegate.swift in Sources */,
+				E23F61452042CB2A0000BF52 /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
