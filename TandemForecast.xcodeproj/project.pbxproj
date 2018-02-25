@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E23F611B2042C0C60000BF52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F611A2042C0C60000BF52 /* AppDelegate.swift */; };
-		E23F611D2042C0C60000BF52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F611C2042C0C60000BF52 /* ViewController.swift */; };
-		E23F61202042C0C60000BF52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23F611E2042C0C60000BF52 /* Main.storyboard */; };
 		E23F61222042C0C60000BF52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E23F61212042C0C60000BF52 /* Assets.xcassets */; };
 		E23F61252042C0C60000BF52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23F61232042C0C60000BF52 /* LaunchScreen.storyboard */; };
 		E23F61302042C0C60000BF52 /* TandemForecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F612F2042C0C60000BF52 /* TandemForecastTests.swift */; };
@@ -18,6 +16,18 @@
 		E23F61412042C35C0000BF52 /* MainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F61402042C35C0000BF52 /* MainInfo.swift */; };
 		E23F61432042C5590000BF52 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F61422042C5590000BF52 /* Weather.swift */; };
 		E23F61452042CB2A0000BF52 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F61442042CB2A0000BF52 /* City.swift */; };
+		E23F614F2042D2E50000BF52 /* ForecastListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F614D2042D2E50000BF52 /* ForecastListViewController.swift */; };
+		E23F61502042D2E50000BF52 /* ForecastListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E23F614E2042D2E50000BF52 /* ForecastListViewController.xib */; };
+		E23F61542042D3D60000BF52 /* HourlyForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F61522042D3D60000BF52 /* HourlyForecastCell.swift */; };
+		E23F61552042D3D60000BF52 /* HourlyForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E23F61532042D3D60000BF52 /* HourlyForecastCell.xib */; };
+		E23F6158204321E40000BF52 /* DailyForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F6156204321E40000BF52 /* DailyForecastCell.swift */; };
+		E23F6159204321E40000BF52 /* DailyForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E23F6157204321E40000BF52 /* DailyForecastCell.xib */; };
+		E23F61622043249E0000BF52 /* ExternalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F61612043249E0000BF52 /* ExternalView.swift */; };
+		E23F61672043342B0000BF52 /* DailyForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F61662043342B0000BF52 /* DailyForecastViewModel.swift */; };
+		E23F6169204334410000BF52 /* HourlyForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F6168204334410000BF52 /* HourlyForecastViewModel.swift */; };
+		E23F616B2043348B0000BF52 /* ForecastListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F616A2043348B0000BF52 /* ForecastListViewModel.swift */; };
+		E23F616F2043380E0000BF52 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F616E2043380E0000BF52 /* DateExtensions.swift */; };
+		E23F6171204349D60000BF52 /* DailyForecastDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F6170204349D60000BF52 /* DailyForecastDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,8 +43,6 @@
 /* Begin PBXFileReference section */
 		E23F61172042C0C60000BF52 /* TandemForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TandemForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E23F611A2042C0C60000BF52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E23F611C2042C0C60000BF52 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E23F611F2042C0C60000BF52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E23F61212042C0C60000BF52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E23F61242042C0C60000BF52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E23F61262042C0C60000BF52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,6 +54,18 @@
 		E23F61402042C35C0000BF52 /* MainInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInfo.swift; sourceTree = "<group>"; };
 		E23F61422042C5590000BF52 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		E23F61442042CB2A0000BF52 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		E23F614D2042D2E50000BF52 /* ForecastListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastListViewController.swift; sourceTree = "<group>"; };
+		E23F614E2042D2E50000BF52 /* ForecastListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastListViewController.xib; sourceTree = "<group>"; };
+		E23F61522042D3D60000BF52 /* HourlyForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastCell.swift; sourceTree = "<group>"; };
+		E23F61532042D3D60000BF52 /* HourlyForecastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyForecastCell.xib; sourceTree = "<group>"; };
+		E23F6156204321E40000BF52 /* DailyForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastCell.swift; sourceTree = "<group>"; };
+		E23F6157204321E40000BF52 /* DailyForecastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyForecastCell.xib; sourceTree = "<group>"; };
+		E23F61612043249E0000BF52 /* ExternalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalView.swift; sourceTree = "<group>"; };
+		E23F61662043342B0000BF52 /* DailyForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastViewModel.swift; sourceTree = "<group>"; };
+		E23F6168204334410000BF52 /* HourlyForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastViewModel.swift; sourceTree = "<group>"; };
+		E23F616A2043348B0000BF52 /* ForecastListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastListViewModel.swift; sourceTree = "<group>"; };
+		E23F616E2043380E0000BF52 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		E23F6170204349D60000BF52 /* DailyForecastDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,13 +107,11 @@
 		E23F61192042C0C60000BF52 /* TandemForecast */ = {
 			isa = PBXGroup;
 			children = (
-				E23F613A2042C10A0000BF52 /* Networking */,
 				E23F611A2042C0C60000BF52 /* AppDelegate.swift */,
-				E23F611C2042C0C60000BF52 /* ViewController.swift */,
-				E23F611E2042C0C60000BF52 /* Main.storyboard */,
-				E23F61212042C0C60000BF52 /* Assets.xcassets */,
-				E23F61232042C0C60000BF52 /* LaunchScreen.storyboard */,
-				E23F61262042C0C60000BF52 /* Info.plist */,
+				E23F613A2042C10A0000BF52 /* Networking */,
+				E23F61462042D1E40000BF52 /* UI */,
+				E23F616C204337E60000BF52 /* Utils */,
+				E23F615A204322150000BF52 /* Resources */,
 			);
 			path = TandemForecast;
 			sourceTree = "<group>";
@@ -125,6 +143,106 @@
 				E23F61442042CB2A0000BF52 /* City.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E23F61462042D1E40000BF52 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E23F61602043248D0000BF52 /* Protocols */,
+				E23F61472042D20F0000BF52 /* ForecastList */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		E23F61472042D20F0000BF52 /* ForecastList */ = {
+			isa = PBXGroup;
+			children = (
+				E23F6165204334120000BF52 /* ViewModels */,
+				E23F61512042D3700000BF52 /* Cells */,
+				E23F61482042D2370000BF52 /* ViewControllers */,
+			);
+			path = ForecastList;
+			sourceTree = "<group>";
+		};
+		E23F61482042D2370000BF52 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E23F614D2042D2E50000BF52 /* ForecastListViewController.swift */,
+				E23F614E2042D2E50000BF52 /* ForecastListViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E23F61512042D3700000BF52 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E23F615C204323E00000BF52 /* DailyCell */,
+				E23F615B204323CF0000BF52 /* HourlyCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E23F615A204322150000BF52 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E23F61262042C0C60000BF52 /* Info.plist */,
+				E23F61212042C0C60000BF52 /* Assets.xcassets */,
+				E23F61232042C0C60000BF52 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E23F615B204323CF0000BF52 /* HourlyCell */ = {
+			isa = PBXGroup;
+			children = (
+				E23F61522042D3D60000BF52 /* HourlyForecastCell.swift */,
+				E23F61532042D3D60000BF52 /* HourlyForecastCell.xib */,
+			);
+			path = HourlyCell;
+			sourceTree = "<group>";
+		};
+		E23F615C204323E00000BF52 /* DailyCell */ = {
+			isa = PBXGroup;
+			children = (
+				E23F6156204321E40000BF52 /* DailyForecastCell.swift */,
+				E23F6157204321E40000BF52 /* DailyForecastCell.xib */,
+			);
+			path = DailyCell;
+			sourceTree = "<group>";
+		};
+		E23F61602043248D0000BF52 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E23F61612043249E0000BF52 /* ExternalView.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E23F6165204334120000BF52 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E23F616A2043348B0000BF52 /* ForecastListViewModel.swift */,
+				E23F61662043342B0000BF52 /* DailyForecastViewModel.swift */,
+				E23F6170204349D60000BF52 /* DailyForecastDataSource.swift */,
+				E23F6168204334410000BF52 /* HourlyForecastViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E23F616C204337E60000BF52 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E23F616D204338020000BF52 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E23F616D204338020000BF52 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E23F616E2043380E0000BF52 /* DateExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,8 +329,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E23F61252042C0C60000BF52 /* LaunchScreen.storyboard in Resources */,
+				E23F61502042D2E50000BF52 /* ForecastListViewController.xib in Resources */,
 				E23F61222042C0C60000BF52 /* Assets.xcassets in Resources */,
-				E23F61202042C0C60000BF52 /* Main.storyboard in Resources */,
+				E23F61552042D3D60000BF52 /* HourlyForecastCell.xib in Resources */,
+				E23F6159204321E40000BF52 /* DailyForecastCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,13 +350,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E23F6158204321E40000BF52 /* DailyForecastCell.swift in Sources */,
+				E23F61622043249E0000BF52 /* ExternalView.swift in Sources */,
+				E23F6171204349D60000BF52 /* DailyForecastDataSource.swift in Sources */,
+				E23F61672043342B0000BF52 /* DailyForecastViewModel.swift in Sources */,
 				E23F61412042C35C0000BF52 /* MainInfo.swift in Sources */,
-				E23F611D2042C0C60000BF52 /* ViewController.swift in Sources */,
+				E23F61542042D3D60000BF52 /* HourlyForecastCell.swift in Sources */,
+				E23F614F2042D2E50000BF52 /* ForecastListViewController.swift in Sources */,
 				E23F613D2042C13B0000BF52 /* Forecast.swift in Sources */,
+				E23F616F2043380E0000BF52 /* DateExtensions.swift in Sources */,
 				E23F613F2042C2180000BF52 /* ForecastData.swift in Sources */,
 				E23F61432042C5590000BF52 /* Weather.swift in Sources */,
 				E23F611B2042C0C60000BF52 /* AppDelegate.swift in Sources */,
+				E23F6169204334410000BF52 /* HourlyForecastViewModel.swift in Sources */,
 				E23F61452042CB2A0000BF52 /* City.swift in Sources */,
+				E23F616B2043348B0000BF52 /* ForecastListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,14 +387,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E23F611E2042C0C60000BF52 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E23F611F2042C0C60000BF52 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E23F61232042C0C60000BF52 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -391,7 +511,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F6W8CTW858;
-				INFOPLIST_FILE = TandemForecast/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TandemForecast/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hu.tmbr.TandemForecast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -406,7 +527,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F6W8CTW858;
-				INFOPLIST_FILE = TandemForecast/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TandemForecast/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hu.tmbr.TandemForecast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
