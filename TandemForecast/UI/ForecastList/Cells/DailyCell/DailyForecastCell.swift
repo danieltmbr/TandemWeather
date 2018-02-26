@@ -18,7 +18,6 @@ protocol DailyForecastModel {
 
     var dataSource: UICollectionViewDataSource { get }
 
-    func indexPathForCurrentTime() -> IndexPath
 }
 
 // MARK: -
@@ -33,7 +32,7 @@ final class DailyForecastCell: UITableViewCell, ExternalCell {
 
     @IBOutlet weak private var dayLabel: UILabel!
 
-    @IBOutlet weak private var collectionView: UICollectionView!
+    @IBOutlet weak private(set) var collectionView: UICollectionView!
 
     // MARK: - Lifecycle methods
 
@@ -58,11 +57,9 @@ final class DailyForecastCell: UITableViewCell, ExternalCell {
         collectionView.dataSource = model.dataSource
         collectionView.reloadData()
 
-        // TODO: Scroll to previous contentoffset
-        collectionView.scrollToItem(
-            at: model.indexPathForCurrentTime(),
-            at: .left,
-            animated: false)
+        if let contentOffset = model.contentOffset {
+            collectionView.setContentOffset(contentOffset, animated: false)
+        }
     }
 
     // MARK: - Private methods

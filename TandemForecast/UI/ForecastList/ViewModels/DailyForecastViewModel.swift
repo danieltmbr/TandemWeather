@@ -27,10 +27,6 @@ extension DailyForecastViewModel: DailyForecastModel {
     var day: String {
         return date.localizedDay
     }
-
-    func indexPathForCurrentTime() -> IndexPath {
-        return IndexPath(item: 0, section: 0)
-    }
 }
 
 

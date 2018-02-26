@@ -28,6 +28,8 @@
 		E23F616B2043348B0000BF52 /* ForecastListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F616A2043348B0000BF52 /* ForecastListViewModel.swift */; };
 		E23F616F2043380E0000BF52 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F616E2043380E0000BF52 /* DateExtensions.swift */; };
 		E23F6171204349D60000BF52 /* DailyForecastDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F6170204349D60000BF52 /* DailyForecastDataSource.swift */; };
+		E23F6175204378CA0000BF52 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F6174204378CA0000BF52 /* AppRouter.swift */; };
+		E23F617D20437F890000BF52 /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23F617C20437F890000BF52 /* ForecastService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		E23F616A2043348B0000BF52 /* ForecastListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastListViewModel.swift; sourceTree = "<group>"; };
 		E23F616E2043380E0000BF52 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		E23F6170204349D60000BF52 /* DailyForecastDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastDataSource.swift; sourceTree = "<group>"; };
+		E23F6174204378CA0000BF52 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		E23F617C20437F890000BF52 /* ForecastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				E23F611A2042C0C60000BF52 /* AppDelegate.swift */,
+				E23F6173204378B10000BF52 /* Routers */,
 				E23F613A2042C10A0000BF52 /* Networking */,
 				E23F61462042D1E40000BF52 /* UI */,
 				E23F616C204337E60000BF52 /* Utils */,
@@ -129,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				E23F613B2042C1190000BF52 /* Models */,
+				E23F617B20437F380000BF52 /* Service */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -245,6 +251,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E23F6173204378B10000BF52 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				E23F6174204378CA0000BF52 /* AppRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		E23F617B20437F380000BF52 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E23F617C20437F890000BF52 /* ForecastService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -356,12 +378,14 @@
 				E23F61672043342B0000BF52 /* DailyForecastViewModel.swift in Sources */,
 				E23F61412042C35C0000BF52 /* MainInfo.swift in Sources */,
 				E23F61542042D3D60000BF52 /* HourlyForecastCell.swift in Sources */,
+				E23F617D20437F890000BF52 /* ForecastService.swift in Sources */,
 				E23F614F2042D2E50000BF52 /* ForecastListViewController.swift in Sources */,
 				E23F613D2042C13B0000BF52 /* Forecast.swift in Sources */,
 				E23F616F2043380E0000BF52 /* DateExtensions.swift in Sources */,
 				E23F613F2042C2180000BF52 /* ForecastData.swift in Sources */,
 				E23F61432042C5590000BF52 /* Weather.swift in Sources */,
 				E23F611B2042C0C60000BF52 /* AppDelegate.swift in Sources */,
+				E23F6175204378CA0000BF52 /* AppRouter.swift in Sources */,
 				E23F6169204334410000BF52 /* HourlyForecastViewModel.swift in Sources */,
 				E23F61452042CB2A0000BF52 /* City.swift in Sources */,
 				E23F616B2043348B0000BF52 /* ForecastListViewModel.swift in Sources */,

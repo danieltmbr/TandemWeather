@@ -18,7 +18,7 @@ protocol ForecastPresenter: class {
 // MARK: -
 
 protocol ForecastService {
-    func fetchForecasts(forCity city: String, callback: (Forecast?, Error?) -> Void)
+    func fetchForecasts(forCity city: String, callback: @escaping (Forecast?, Error?) -> Void)
 }
 
 // MARK: -
@@ -29,7 +29,7 @@ final class ForecastListViewModel: ForecastListModel {
 
     private let service: ForecastService
 
-    private var forecasts: [DailyForecastModel]
+    private var forecasts: [DailyForecastModel] = []
 
     var cityName: String
 
@@ -39,27 +39,24 @@ final class ForecastListViewModel: ForecastListModel {
 
     // MARK: - Lifecycle methods
 
-    init(service: ForecastService, cityName: String, forecasts: [DailyForecastModel]) {
+    init(service: ForecastService, cityName: String) {
         self.service = service
         self.cityName = cityName
-        self.forecasts = forecasts
     }
 
     // MARK: - Public methods
 
     func getForecasts() {
         service.fetchForecasts(forCity: cityName) { [weak self] (forecast, error) in
-            DispatchQueue.main.async {
-                guard let strongSelf = self else { return }
-                if let forecast = forecast {
-                    strongSelf.updatePresenter(
-                        with: strongSelf.convert(forecast: forecast)
-                    )
-                } else if let error = error {
-                    strongSelf.updatePresenter(with: error)
-                } else {
-                    assertionFailure("Should not happen")
-                }
+            guard let strongSelf = self else { return }
+            if let forecast = forecast {
+                strongSelf.updatePresenter(
+                    with: strongSelf.convert(forecast: forecast)
+                )
+            } else if let error = error {
+                strongSelf.updatePresenter(with: error)
+            } else {
+                assertionFailure("Should not happen")
             }
         }
     }

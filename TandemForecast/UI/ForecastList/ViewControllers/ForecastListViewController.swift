@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ForecastListModel {
+protocol ForecastListModel: class {
 
     var cityName: String { get }
 
@@ -36,6 +36,7 @@ final class ForecastListViewController: UIViewController {
     required init(model: ForecastListModel) {
         self.model = model
         super.init(nibName: "ForecastListViewController", bundle: nil)
+        model.presenter = self
     }
 
     required init?(coder aDecoder: NSCoder) {
