@@ -42,6 +42,7 @@ final class ForecastFetcher: ForecastService {
 
             do {
                 let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .secondsSince1970
                 let forecast = try decoder.decode(Forecast.self, from: data)
                 callback(forecast, nil)
             } catch let e {

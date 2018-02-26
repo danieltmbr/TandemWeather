@@ -48,6 +48,7 @@ final class ForecastListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(externalCell: DailyForecastCell.self)
+        tableView.insetsContentViewsToSafeArea = false
         model.getForecasts()
     }
 }

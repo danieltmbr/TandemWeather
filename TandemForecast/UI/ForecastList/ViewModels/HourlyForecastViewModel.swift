@@ -34,10 +34,10 @@ extension HourlyForcastViewModel: HourlyForcastModel {
     }
 
     var minTemp: String {
-        return "\(temp-min)°C"
+        return "\(min)°C"
     }
 
     var maxTemp: String {
-        return "\(temp+min)°C"
+        return "\(max)°C"
     }
 }
