@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018. 02. 25. - Sunday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAI-67-iw9" userLabel="DayLabel">
-                        <rect key="frame" x="10" y="4" width="302" height="19.5"/>
+                        <rect key="frame" x="10" y="4" width="300" height="19.5"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="tsh-1x-KAO"/>
                         </constraints>
@@ -31,7 +31,7 @@
                         <rect key="frame" x="0.0" y="27" width="320" height="110"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="1" id="Am2-p6-nFQ">
-                            <size key="itemSize" width="220" height="110"/>
+                            <size key="itemSize" width="200" height="110"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -42,12 +42,13 @@
                 <constraints>
                     <constraint firstItem="VAI-67-iw9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="Bqg-Qo-oYB"/>
                     <constraint firstAttribute="bottom" secondItem="pyn-Ii-tAn" secondAttribute="bottom" id="I3t-Im-aZg"/>
-                    <constraint firstAttribute="trailing" secondItem="VAI-67-iw9" secondAttribute="trailing" constant="8" id="Rgw-nT-zO9"/>
+                    <constraint firstItem="wro-gP-hf0" firstAttribute="trailing" secondItem="VAI-67-iw9" secondAttribute="trailing" constant="10" id="Rgw-nT-zO9"/>
                     <constraint firstItem="pyn-Ii-tAn" firstAttribute="top" secondItem="VAI-67-iw9" secondAttribute="bottom" constant="4" id="XgU-ti-LVn"/>
-                    <constraint firstItem="VAI-67-iw9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="gmJ-Fc-n5f"/>
+                    <constraint firstItem="VAI-67-iw9" firstAttribute="leading" secondItem="wro-gP-hf0" secondAttribute="leading" constant="10" id="gmJ-Fc-n5f"/>
                     <constraint firstItem="pyn-Ii-tAn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wAx-AM-7Mu"/>
                     <constraint firstAttribute="trailing" secondItem="pyn-Ii-tAn" secondAttribute="trailing" id="yPs-k9-ZpS"/>
                 </constraints>
+                <viewLayoutGuide key="safeArea" id="wro-gP-hf0"/>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
