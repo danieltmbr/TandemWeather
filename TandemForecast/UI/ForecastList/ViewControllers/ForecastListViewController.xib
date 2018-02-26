@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ForecastListViewController" customModule="TandemForecast" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="Tzf-0Q-DYf" id="xd6-qs-63Q"/>
+                <outlet property="tableView" destination="Tzf-0Q-DYf" id="SDL-15-BEy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
