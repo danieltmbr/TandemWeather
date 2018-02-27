@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: -
 
-protocol HourlyForcastModel {
+protocol HourlyForcastViewModel {
 
     var hour: String { get }
 
@@ -22,7 +22,7 @@ protocol HourlyForcastModel {
 
     var description: String { get }
 
-    var iconUrl: URL? { get }
+    var iconId: String? { get }
 
 }
 
@@ -30,7 +30,13 @@ protocol HourlyForcastModel {
 
 final class HourlyForecastCell: UICollectionViewCell, ExternalCell {
 
-    // MARK: IBOutlets
+    // MARK: Properties
+
+    var imageFetcher: ImageFetcher?
+
+    private var imageDownloadTask: CancelableRequest?
+
+    // MARK: - IBOutlets
 
     @IBOutlet weak private var hourLabel: UILabel!
 
@@ -46,17 +52,28 @@ final class HourlyForecastCell: UICollectionViewCell, ExternalCell {
 
     // MARK: - Public methods
 
-    func render(forecast: HourlyForcastModel) {
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageDownloadTask?.cancel()
+    }
+
+    func render(forecast: HourlyForcastViewModel) {
         hourLabel.text = forecast.hour
         temperatureLabel.text = forecast.temperature
         minTempLabel.text = forecast.minTemp
         maxTempLabel.text = forecast.maxTemp
         descriptionLabel.text = forecast.description
-        iconImageView.isHidden = forecast.iconUrl == nil
+        iconImageView.isHidden = forecast.iconId == nil || imageFetcher == nil
 
-        if let iconUrl = forecast.iconUrl {
-            // TODO: Icon handling
+        if let iconId = forecast.iconId,
+            let imageFetcher = imageFetcher {
+
+            imageDownloadTask = imageFetcher.fetchIcon(id: iconId, callback: { [weak self] (image, _) in
+                self?.imageDownloadTask = nil
+                DispatchQueue.main.async {
+                    self?.iconImageView.image = image
+                }
+            })
         }
     }
-
 }

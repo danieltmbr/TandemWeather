@@ -10,14 +10,13 @@ import UIKit
 
 // MARK: -
 
-protocol DailyForecastModel {
+protocol DailyForecastViewModel {
 
     var day: String { get }
 
     var contentOffset: CGPoint? { get set }
 
     var dataSource: UICollectionViewDataSource { get }
-
 }
 
 // MARK: -
@@ -26,7 +25,7 @@ final class DailyForecastCell: UITableViewCell, ExternalCell {
 
     // MARK: Properties
 
-    private var model: DailyForecastModel?
+    private var model: DailyForecastViewModel?
 
     // MARK: - IBOutlets
 
@@ -48,7 +47,7 @@ final class DailyForecastCell: UITableViewCell, ExternalCell {
 
     // MARK: - Public methods
 
-    func setupCell(with model: DailyForecastModel?) {
+    func setupCell(with model: DailyForecastViewModel?) {
         self.model = model
         guard let model = model
             else { return clear() }

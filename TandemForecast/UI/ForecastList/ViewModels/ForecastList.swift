@@ -11,29 +11,21 @@ import Foundation
 // MARK: -
 
 protocol ForecastPresenter: class {
-    func update(forecasts: [DailyForecastModel])
+    func update(forecasts: [DailyForecastViewModel])
     func displayError(_ error: Error)
 }
 
 // MARK: -
 
-protocol ForecastService {
-    func fetchForecasts(forCity city: String, callback: @escaping (Forecast?, Error?) -> Void)
-}
-
-// MARK: -
-
-final class ForecastListViewModel: ForecastListModel {
+final class ForecastList: ForecastListViewModel {
 
     // MARK: Properties
 
     private let service: ForecastService
 
-    private var forecasts: [DailyForecastModel] = []
+    private var forecasts: [DailyForecastViewModel] = []
 
     var cityName: String
-
-    var cityLocation: String?
 
     weak var presenter: ForecastPresenter?
 
@@ -51,7 +43,7 @@ final class ForecastListViewModel: ForecastListModel {
             guard let strongSelf = self else { return }
             if let forecast = forecast {
                 strongSelf.updatePresenter(
-                    with: strongSelf.convert(forecast: forecast)
+                    with: strongSelf.convert(forecast)
                 )
             } else if let error = error {
                 strongSelf.updatePresenter(with: error)
@@ -63,7 +55,7 @@ final class ForecastListViewModel: ForecastListModel {
 
     // MARK: - Private methods
 
-    private func updatePresenter(with forecasts: [DailyForecastModel]) {
+    private func updatePresenter(with forecasts: [DailyForecastViewModel]) {
         DispatchQueue.main.async { [weak self] in
             self?.presenter?.update(forecasts: forecasts)
         }
@@ -75,32 +67,31 @@ final class ForecastListViewModel: ForecastListModel {
         }
     }
 
-    private func convert(forecast: Forecast) -> [DailyForecastModel] {
-        return groupForecastsByDate(forecast.list).map {
-            let dataSource = DailyForecastDataSource(forecasts: $0.1)
-            return DailyForecastViewModel(date: $0.0, dataSource: dataSource)
+    private func convert(_ weatherForecasts: [WeatherForecast]) -> [DailyForecastViewModel] {
+        return groupForecastsByDate(weatherForecasts).map {
+            let dataSource = DailyForecastDataSource(weatherForecasts: $0.1)
+            return DailyForecast(date: $0.0, dataSource: dataSource)
         }
     }
 
-    private func groupForecastsByDate(_ forecastsData: [ForecastData]) -> [(Date, [ForecastData])] {
-        guard let firstData = forecastsData.first
+    private func groupForecastsByDate(_ weatherForecasts: [WeatherForecast]) -> [(Date, [WeatherForecast])] {
+        guard let firstData = weatherForecasts.first
             else { return [] }
 
         let calendar = Calendar.current
-        var groups: [(Date, [ForecastData])] = []
-        var date = firstData.dt
-        var currentGroup: [ForecastData] = []
+        var groups: [(Date, [WeatherForecast])] = []
+        var date = firstData.date
+        var currentGroup: [WeatherForecast] = []
 
-        for data in forecastsData {
-            if calendar.isDate(data.dt, inSameDayAs: date) {
-                currentGroup.append(data)
+        for weather in weatherForecasts {
+            if calendar.isDate(weather.date, inSameDayAs: date) {
+                currentGroup.append(weather)
             } else {
                 groups.append((date, currentGroup))
-                date = data.dt
-                currentGroup = [data]
+                date = weather.date
+                currentGroup = [weather]
             }
         }
-
         groups.append((date, currentGroup))
         return groups
     }

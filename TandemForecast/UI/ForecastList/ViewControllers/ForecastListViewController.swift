@@ -8,11 +8,9 @@
 
 import UIKit
 
-protocol ForecastListModel: class {
+protocol ForecastListViewModel: class {
 
     var cityName: String { get }
-
-    var cityLocation: String? { get }
 
     var presenter: ForecastPresenter? { get set }
 
@@ -23,9 +21,9 @@ final class ForecastListViewController: UIViewController {
 
     // MARK: - Properties
 
-    private var forecasts: [DailyForecastModel] = []
+    private var forecasts: [DailyForecastViewModel] = []
 
-    private let model: ForecastListModel
+    private let model: ForecastListViewModel
 
     // MARK: - IBOutlets
 
@@ -33,10 +31,11 @@ final class ForecastListViewController: UIViewController {
 
     // MARK: - Initialization methods
 
-    required init(model: ForecastListModel) {
+    required init(model: ForecastListViewModel) {
         self.model = model
         super.init(nibName: "ForecastListViewController", bundle: nil)
         model.presenter = self
+        self.title = model.cityName
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -57,13 +56,14 @@ final class ForecastListViewController: UIViewController {
 
 extension ForecastListViewController: ForecastPresenter {
 
-    func update(forecasts: [DailyForecastModel]) {
+    func update(forecasts: [DailyForecastViewModel]) {
         self.forecasts = forecasts
         tableView.reloadData()
     }
 
     func displayError(_ error: Error) {
         // TODO:
+        print(error)
     }
 }
 
