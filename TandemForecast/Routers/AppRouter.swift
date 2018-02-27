@@ -37,16 +37,16 @@ final class AppRouter {
     // MARK: - Private methods
 
     private func onlineForecastScene() -> UIViewController {
-        let onlineViewModel = ForecastListViewModel(service: ForecastFetcher(), cityName: "London")
-        let onlineListViewController = ForecastListViewController(model: onlineViewModel)
-        onlineListViewController.tabBarItem = UITabBarItem(title: "Open weather", image: #imageLiteral(resourceName: "apiTabBarIcon"), selectedImage: nil)
-        return onlineListViewController
+        let viewModel = ForecastList(service: OnlineForecastService(), cityName: "London")
+        let listViewController = ForecastListViewController(model: viewModel)
+        listViewController.tabBarItem = UITabBarItem(title: "Online", image: #imageLiteral(resourceName: "apiTabBarIcon"), selectedImage: nil)
+        return listViewController
     }
 
     private func offlineForecastScene() -> UIViewController {
-        let onlineViewModel2 = ForecastListViewModel(service: ForecastFetcher(), cityName: "London")
-        let csvListViewController = ForecastListViewController(model: onlineViewModel2)
-        csvListViewController.tabBarItem = UITabBarItem(title: "Offline", image: #imageLiteral(resourceName: "csvTabBarIcon"), selectedImage: nil)
-        return csvListViewController
+        let viewModel = ForecastList(service: WeatherCsvDecoder(), cityName: "Caradhras")
+        let listViewController = ForecastListViewController(model: viewModel)
+        listViewController.tabBarItem = UITabBarItem(title: "Offline", image: #imageLiteral(resourceName: "csvTabBarIcon"), selectedImage: nil)
+        return listViewController
     }
 }

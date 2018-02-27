@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DailyForecastViewModel {
+final class DailyForecast {
 
     let date: Date
 
@@ -22,11 +22,9 @@ final class DailyForecastViewModel {
     }
 }
 
-extension DailyForecastViewModel: DailyForecastModel {
+extension DailyForecast: DailyForecastViewModel {
 
     var day: String {
         return date.localizedDay
     }
 }
-
-

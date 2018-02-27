@@ -98,35 +98,3 @@ fileprivate extension UIViewController {
         return T()
     }
 }
-
-// MARK: - External View Protocol
-
-extension ExternalView where Self: UIView {
-
-    /**
-     Loads Self from Nib file
-     - parameter nibName: Name of the nib from which it should load the view
-     - returns: Self? if Nib contains a self classed object
-     */
-    static func load(from nib: String? = nil) -> Self? {
-
-        let nibName = nib ?? Self.nibName
-        // Guarantee that the Nib file wasn't empty.
-        guard let objects = Bundle.main.loadNibNamed(nibName, owner: nil, options: nil) else {
-            assertionFailure("check xib")
-            return nil
-        }
-        // Check for Self classed view between Nib's object.
-        var viewObject: Self? = nil
-        for object in objects where object is Self {
-            viewObject = object as? Self
-            break
-        }
-        // Guarantee we found the cell
-        guard let view = viewObject else {
-            assertionFailure("check xib")
-            return nil
-        }
-        return view
-    }
-}

@@ -15,7 +15,7 @@ private struct ApiConstants {
     static let apiKey: String = "405d5eac89fc0da96d414e20ab4ca1c3"
 }
 
-final class ForecastFetcher: ForecastService {
+final class OnlineForecastService: ForecastService {
 
     // MARK: - Properties
 
@@ -25,13 +25,13 @@ final class ForecastFetcher: ForecastService {
 
     // MARK: - Public methods
 
-    func fetchForecasts(forCity city: String, callback: @escaping (Forecast?, Error?) -> Void) {
+    func fetchForecasts(forCity city: String, callback: @escaping ([WeatherForecast]?, Error?) -> Void) {
 
         guard var urlComponents = URLComponents(string: ApiConstants.baseUrl)
-            else { return }
+            else { return callback(nil, ServiceError.invalidUrlComponents) }
         urlComponents.query = "q=\(city),uk&units=metric&APPID=\(ApiConstants.apiKey)"
         guard let url = urlComponents.url
-            else { return }
+            else { return callback(nil, ServiceError.invalidUrl) }
 
         dataTask?.cancel()
 
@@ -44,7 +44,7 @@ final class ForecastFetcher: ForecastService {
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .secondsSince1970
                 let forecast = try decoder.decode(Forecast.self, from: data)
-                callback(forecast, nil)
+                callback(forecast.list, nil)
             } catch let e {
                 callback(nil, e)
             }
