@@ -123,6 +123,7 @@
 		E23F61192042C0C60000BF52 /* TandemForecast */ = {
 			isa = PBXGroup;
 			children = (
+				E23F61262042C0C60000BF52 /* Info.plist */,
 				E23F611A2042C0C60000BF52 /* AppDelegate.swift */,
 				E23F6173204378B10000BF52 /* Routers */,
 				E23F613A2042C10A0000BF52 /* Networking */,
@@ -205,10 +206,9 @@
 		E23F615A204322150000BF52 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E23F61262042C0C60000BF52 /* Info.plist */,
+				E27A5C10204622FC00A2EF41 /* Forecasts */,
 				E23F61212042C0C60000BF52 /* Assets.xcassets */,
 				E23F61232042C0C60000BF52 /* LaunchScreen.storyboard */,
-				E27A5C012044CF3200A2EF41 /* Caradhras.csv */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -307,6 +307,14 @@
 				E27A5C0C2045E14000A2EF41 /* CsvError.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		E27A5C10204622FC00A2EF41 /* Forecasts */ = {
+			isa = PBXGroup;
+			children = (
+				E27A5C012044CF3200A2EF41 /* Caradhras.csv */,
+			);
+			path = Forecasts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
