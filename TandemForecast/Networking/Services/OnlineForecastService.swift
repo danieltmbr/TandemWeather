@@ -25,11 +25,11 @@ final class OnlineForecastService: ForecastService {
 
     // MARK: - Public methods
 
-    func fetchForecasts(forCity city: String, callback: @escaping ([WeatherForecast]?, Error?) -> Void) {
+    func fetchForecasts(for place: Place, callback: @escaping ([WeatherForecast]?, Error?) -> Void) {
 
         guard var urlComponents = URLComponents(string: ApiConstants.baseUrl)
             else { return callback(nil, ServiceError.invalidUrlComponents) }
-        urlComponents.query = "q=\(city),uk&units=metric&APPID=\(ApiConstants.apiKey)"
+        urlComponents.query = "q=\(place.name),uk&units=metric&APPID=\(ApiConstants.apiKey)"
         guard let url = urlComponents.url
             else { return callback(nil, ServiceError.invalidUrl) }
 

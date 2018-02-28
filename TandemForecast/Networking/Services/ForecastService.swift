@@ -25,5 +25,5 @@ protocol WeatherForecast {
 }
 
 protocol ForecastService {
-    func fetchForecasts(forCity city: String, callback: @escaping ([WeatherForecast]?, Error?) -> Void)
+    func fetchForecasts(for place: Place, callback: @escaping ([WeatherForecast]?, Error?) -> Void)
 }

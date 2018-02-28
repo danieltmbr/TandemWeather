@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ForecastListViewController" customModule="TandemForecast" customModuleProvider="target">
             <connections>
+                <outlet property="errorContainerView" destination="1Mc-wa-NuU" id="ear-RJ-ixg"/>
+                <outlet property="loaderView" destination="Lbx-yI-GCa" id="OiE-Sb-8to"/>
                 <outlet property="tableView" destination="Tzf-0Q-DYf" id="SDL-15-BEy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -29,17 +31,79 @@
                         <outlet property="delegate" destination="-1" id="ekw-Y4-URh"/>
                     </connections>
                 </tableView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Mc-wa-NuU">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                    <subviews>
+                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoU-4M-YUQ">
+                            <rect key="frame" x="63" y="258" width="249.5" height="38.5"/>
+                            <string key="text">Couldn't load weather information.
+Tap to try again.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstItem="UoU-4M-YUQ" firstAttribute="centerY" secondItem="1Mc-wa-NuU" secondAttribute="centerY" id="aoC-ec-5qq"/>
+                        <constraint firstItem="UoU-4M-YUQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1Mc-wa-NuU" secondAttribute="leading" constant="30" id="cVO-fi-GJD"/>
+                        <constraint firstItem="UoU-4M-YUQ" firstAttribute="centerX" secondItem="1Mc-wa-NuU" secondAttribute="centerX" id="rKD-5k-kVw"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="RuE-TJ-nRK" appends="YES" id="Tzv-Cy-Oah"/>
+                    </connections>
+                </view>
+                <visualEffectView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lbx-yI-GCa">
+                    <rect key="frame" x="107" y="197" width="160" height="160"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mkf-zf-4rf">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="fPq-2s-Wlg">
+                                <rect key="frame" x="62" y="62" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="fPq-2s-Wlg" firstAttribute="centerX" secondItem="mkf-zf-4rf" secondAttribute="centerX" id="l5J-nw-56b"/>
+                            <constraint firstItem="fPq-2s-Wlg" firstAttribute="centerY" secondItem="mkf-zf-4rf" secondAttribute="centerY" id="wdy-Tb-lxb"/>
+                        </constraints>
+                    </view>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="3TJ-9o-2eU"/>
+                        <constraint firstAttribute="height" constant="160" id="dcA-v9-3xY"/>
+                    </constraints>
+                    <blurEffect style="extraLight"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </visualEffectView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="1Mc-wa-NuU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="5EJ-zD-fNH"/>
                 <constraint firstItem="Tzf-0Q-DYf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ahi-wI-BMh"/>
                 <constraint firstItem="Tzf-0Q-DYf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="CeQ-Ag-1Ff"/>
+                <constraint firstItem="1Mc-wa-NuU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HvJ-do-CZz"/>
+                <constraint firstItem="1Mc-wa-NuU" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="IuA-1M-BtU"/>
+                <constraint firstItem="1Mc-wa-NuU" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="QO3-Im-VVw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Tzf-0Q-DYf" secondAttribute="bottom" id="XX0-7l-tT6"/>
+                <constraint firstItem="Lbx-yI-GCa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="egd-D1-LYs"/>
                 <constraint firstAttribute="trailing" secondItem="Tzf-0Q-DYf" secondAttribute="trailing" id="i8H-rw-E8P"/>
+                <constraint firstItem="Lbx-yI-GCa" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="woZ-uP-kzD"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
         </view>
+        <tapGestureRecognizer id="RuE-TJ-nRK">
+            <connections>
+                <action selector="errorContainerTapped:" destination="-1" id="PEu-Xw-qgU"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

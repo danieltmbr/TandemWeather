@@ -10,7 +10,9 @@ import UIKit
 
 protocol ForecastListViewModel: class {
 
-    var cityName: String { get }
+    var location: Place { get set }
+
+    var locations: [Place] { get }
 
     var presenter: ForecastPresenter? { get set }
 
@@ -29,13 +31,16 @@ final class ForecastListViewController: UIViewController {
 
     @IBOutlet weak private var tableView: UITableView!
 
+    @IBOutlet weak private var loaderView: UIView!
+
+    @IBOutlet weak private var errorContainerView: UIView!
+
     // MARK: - Initialization methods
 
     required init(model: ForecastListViewModel) {
         self.model = model
         super.init(nibName: "ForecastListViewController", bundle: nil)
         model.presenter = self
-        self.title = model.cityName
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -46,9 +51,54 @@ final class ForecastListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = model.location.name
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: #imageLiteral(resourceName: "locationIcon"),
+            style: .plain,
+            target: self,
+            action: #selector(locationItemTapped(_:)))
         tableView.register(externalCell: DailyForecastCell.self)
         tableView.insetsContentViewsToSafeArea = false
+        fetchForecast()
+    }
+
+    // MARK: - IBActions
+
+    @IBAction private func errorContainerTapped(_ sender: UITapGestureRecognizer) {
+        fetchForecast()
+    }
+
+    // MARK: - Private methods
+
+    @objc
+    private func locationItemTapped(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(
+            title: NSLocalizedString("Select location", comment: "Button title which opens a location selector"),
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+        for place in model.locations {
+            let action = UIAlertAction(title: place.name, style: .default) { _ in
+                guard place.name != self.model.location.name else { return }
+                self.model.location = place
+                self.title = place.name
+            }
+            alertController.addAction(action)
+        }
+        if let popoverController = alertController.popoverPresentationController {
+            popoverController.barButtonItem = sender
+        }
+        present(alertController, animated: true, completion: nil)
+    }
+
+    private func fetchForecast() {
+        enableLocationChange(false)
+        errorContainerView.isHidden = true
         model.getForecasts()
+    }
+
+    private func enableLocationChange(_ enable: Bool) {
+        navigationItem.rightBarButtonItem?.isEnabled = enable
     }
 }
 
@@ -59,11 +109,20 @@ extension ForecastListViewController: ForecastPresenter {
     func update(forecasts: [DailyForecastViewModel]) {
         self.forecasts = forecasts
         tableView.reloadData()
+        enableLocationChange(true)
     }
 
     func displayError(_ error: Error) {
-        // TODO:
-        print(error)
+        errorContainerView.isHidden = false
+        enableLocationChange(true)
+    }
+
+    func displayLoader() {
+        loaderView.isHidden = false
+    }
+
+    func dismissLoader() {
+        loaderView.isHidden = true
     }
 }
 

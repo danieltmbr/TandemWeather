@@ -28,11 +28,11 @@ final class WeatherCsvDecoder {
 
 extension WeatherCsvDecoder: ForecastService {
 
-    func fetchForecasts(forCity city: String, callback: @escaping ([WeatherForecast]?, Error?) -> Void) {
+    func fetchForecasts(for place: Place, callback: @escaping ([WeatherForecast]?, Error?) -> Void) {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let strongSelf = self else { return }
             do {
-                let weather = try strongSelf.parseCsv(named: city)
+                let weather = try strongSelf.parseCsv(named: place.name)
                 callback(weather, nil)
             } catch let error {
                 callback(nil, error)
