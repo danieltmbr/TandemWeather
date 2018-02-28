@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: -
 
-protocol ForecastPresenter: class {
+protocol ForecastPresenter: class, LoaderPresenter {
     func update(forecasts: [DailyForecastViewModel])
     func displayError(_ error: Error)
 }
@@ -25,22 +25,31 @@ final class ForecastList: ForecastListViewModel {
 
     private var forecasts: [DailyForecastViewModel] = []
 
-    var cityName: String
+    let locations: [Place]
+
+    var location: Place {
+        didSet { getForecasts() }
+    }
 
     weak var presenter: ForecastPresenter?
 
     // MARK: - Lifecycle methods
 
-    init(service: ForecastService, cityName: String) {
+    init(service: ForecastService, locations: [String]) {
+        guard locations.count > 0 else { fatalError("Please provide at least one location") }
         self.service = service
-        self.cityName = cityName
+        self.locations = locations
+        self.location = locations[0]
     }
 
     // MARK: - Public methods
 
     func getForecasts() {
-        service.fetchForecasts(forCity: cityName) { [weak self] (forecast, error) in
+        displayLoader(true)
+        service.fetchForecasts(for: location) { [weak self] (forecast, error) in
             guard let strongSelf = self else { return }
+            strongSelf.displayLoader(false)
+
             if let forecast = forecast {
                 strongSelf.updatePresenter(
                     with: strongSelf.convert(forecast)
@@ -64,6 +73,12 @@ final class ForecastList: ForecastListViewModel {
     private func updatePresenter(with error: Error) {
         DispatchQueue.main.async { [weak self] in
             self?.presenter?.displayError(error)
+        }
+    }
+
+    private func displayLoader(_ display: Bool) {
+        DispatchQueue.main.async { [weak self] in
+            display ? self?.presenter?.displayLoader() : self?.presenter?.dismissLoader()
         }
     }
 

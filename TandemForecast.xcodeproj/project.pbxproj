@@ -36,6 +36,9 @@
 		E27A5C0B2045DDDB00A2EF41 /* CsvDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27A5C0A2045DDDB00A2EF41 /* CsvDecoder.swift */; };
 		E27A5C0D2045E14000A2EF41 /* CsvError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27A5C0C2045E14000A2EF41 /* CsvError.swift */; };
 		E27A5C0F2046109A00A2EF41 /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27A5C0E2046109A00A2EF41 /* ForecastService.swift */; };
+		E27A5C122046239300A2EF41 /* Mordor.csv in Resources */ = {isa = PBXBuildFile; fileRef = E27A5C112046239300A2EF41 /* Mordor.csv */; };
+		E27A5C142046267300A2EF41 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27A5C132046267300A2EF41 /* Place.swift */; };
+		E27A5C162046270C00A2EF41 /* LoaderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27A5C152046270C00A2EF41 /* LoaderPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +85,9 @@
 		E27A5C0A2045DDDB00A2EF41 /* CsvDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvDecoder.swift; sourceTree = "<group>"; };
 		E27A5C0C2045E14000A2EF41 /* CsvError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvError.swift; sourceTree = "<group>"; };
 		E27A5C0E2046109A00A2EF41 /* ForecastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
+		E27A5C112046239300A2EF41 /* Mordor.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Mordor.csv; sourceTree = "<group>"; };
+		E27A5C132046267300A2EF41 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		E27A5C152046270C00A2EF41 /* LoaderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				E23F61612043249E0000BF52 /* ExternalView.swift */,
+				E27A5C132046267300A2EF41 /* Place.swift */,
+				E27A5C152046270C00A2EF41 /* LoaderPresenter.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -313,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				E27A5C012044CF3200A2EF41 /* Caradhras.csv */,
+				E27A5C112046239300A2EF41 /* Mordor.csv */,
 			);
 			path = Forecasts;
 			sourceTree = "<group>";
@@ -403,6 +412,7 @@
 				E23F61252042C0C60000BF52 /* LaunchScreen.storyboard in Resources */,
 				E27A5C022044CF3200A2EF41 /* Caradhras.csv in Resources */,
 				E23F61502042D2E50000BF52 /* ForecastListViewController.xib in Resources */,
+				E27A5C122046239300A2EF41 /* Mordor.csv in Resources */,
 				E23F61222042C0C60000BF52 /* Assets.xcassets in Resources */,
 				E23F61552042D3D60000BF52 /* HourlyForecastCell.xib in Resources */,
 				E23F6159204321E40000BF52 /* DailyForecastCell.xib in Resources */,
@@ -423,12 +433,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E27A5C142046267300A2EF41 /* Place.swift in Sources */,
 				E23F6158204321E40000BF52 /* DailyForecastCell.swift in Sources */,
 				E23F61622043249E0000BF52 /* ExternalView.swift in Sources */,
 				E23F6171204349D60000BF52 /* DailyForecastDataSource.swift in Sources */,
 				E23F61672043342B0000BF52 /* DailyForecast.swift in Sources */,
 				E27A5C0D2045E14000A2EF41 /* CsvError.swift in Sources */,
 				E23F61412042C35C0000BF52 /* MainInfo.swift in Sources */,
+				E27A5C162046270C00A2EF41 /* LoaderPresenter.swift in Sources */,
 				E23F61542042D3D60000BF52 /* HourlyForecastCell.swift in Sources */,
 				E23F617D20437F890000BF52 /* OnlineForecastService.swift in Sources */,
 				E27A5C0F2046109A00A2EF41 /* ForecastService.swift in Sources */,
@@ -591,7 +603,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F6W8CTW858;
-				INFOPLIST_FILE = "$(SRCROOT)/TandemForecast/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/TandemForecast/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hu.tmbr.TandemForecast;
@@ -607,7 +619,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F6W8CTW858;
-				INFOPLIST_FILE = "$(SRCROOT)/TandemForecast/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/TandemForecast/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hu.tmbr.TandemForecast;
