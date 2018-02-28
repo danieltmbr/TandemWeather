@@ -8,7 +8,11 @@
 
 import UIKit
 
+// MARK: -
+
 final class DailyForecast {
+
+    // MARK: Properties
 
     let date: Date
 
@@ -16,11 +20,15 @@ final class DailyForecast {
 
     var contentOffset: CGPoint?
 
+    // MARK: - Initialisation
+
     init(date: Date, dataSource: UICollectionViewDataSource) {
         self.date = date
         self.dataSource = dataSource
     }
 }
+
+// MARK: -
 
 extension DailyForecast: DailyForecastViewModel {
 

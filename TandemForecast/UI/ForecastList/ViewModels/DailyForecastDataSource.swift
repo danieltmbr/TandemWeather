@@ -8,9 +8,15 @@
 
 import UIKit
 
+// MARK: -
+
 final class DailyForecastDataSource: NSObject {
 
+    // MARK: Properties
+
     private let hourlyForecasts: [HourlyForcastViewModel]
+
+    // MARK: - Initialisation
 
     init(hourlyForecasts: [HourlyForcastViewModel]) {
         self.hourlyForecasts = hourlyForecasts
@@ -27,6 +33,8 @@ final class DailyForecastDataSource: NSObject {
         self.init(hourlyForecasts: hourlyForecasts)
     }
 }
+
+// MARK: -
 
 extension DailyForecastDataSource:  UICollectionViewDataSource {
 

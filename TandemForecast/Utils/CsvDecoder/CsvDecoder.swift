@@ -8,6 +8,8 @@
 
 import Foundation
 
+// MARK: -
+
 final class WeatherCsvDecoder {
 
     private func parseCsv(named: String) throws -> [HourlyForcast] {
@@ -25,6 +27,8 @@ final class WeatherCsvDecoder {
         return contents
     }
 }
+
+// MARK: - 
 
 extension WeatherCsvDecoder: ForecastService {
 

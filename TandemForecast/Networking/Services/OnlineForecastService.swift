@@ -8,6 +8,8 @@
 
 import Foundation
 
+// MARK: -
+
 private struct ApiConstants {
 
     static let baseUrl: String = "https://api.openweathermap.org/data/2.5/forecast"
@@ -15,9 +17,11 @@ private struct ApiConstants {
     static let apiKey: String = "405d5eac89fc0da96d414e20ab4ca1c3"
 }
 
+// MARK: -
+
 final class OnlineForecastService: ForecastService {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     private let session = URLSession(configuration: .default)
     /** Currently active forecast fetch */

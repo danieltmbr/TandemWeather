@@ -13,7 +13,5 @@ protocol Place {
 }
 
 extension String: Place {
-    var name: String {
-        return self
-    }
+    var name: String { return self }
 }

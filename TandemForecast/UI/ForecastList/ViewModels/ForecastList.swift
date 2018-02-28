@@ -62,7 +62,7 @@ final class ForecastList: ForecastListViewModel {
         }
     }
 
-    // MARK: - Private methods
+    // MARK: - Private UI methods
 
     private func updatePresenter(with forecasts: [DailyForecastViewModel]) {
         DispatchQueue.main.async { [weak self] in
@@ -81,6 +81,8 @@ final class ForecastList: ForecastListViewModel {
             display ? self?.presenter?.displayLoader() : self?.presenter?.dismissLoader()
         }
     }
+
+    // MARK: - Private Data handlig methods
 
     private func convert(_ weatherForecasts: [WeatherForecast]) -> [DailyForecastViewModel] {
         return groupForecastsByDate(weatherForecasts).map {

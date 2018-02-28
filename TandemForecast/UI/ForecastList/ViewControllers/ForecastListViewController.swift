@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: -
+
 protocol ForecastListViewModel: class {
 
     var location: Place { get set }
@@ -19,9 +21,11 @@ protocol ForecastListViewModel: class {
     func getForecasts()
 }
 
+// MARK: -
+
 final class ForecastListViewController: UIViewController {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     private var forecasts: [DailyForecastViewModel] = []
 

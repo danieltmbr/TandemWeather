@@ -8,6 +8,8 @@
 
 import Foundation
 
+// MARK: -
+
 struct ForecastData: Codable {
     
     /** Time of data forecasted, unix, UTC */
@@ -17,6 +19,8 @@ struct ForecastData: Codable {
     /** Weather conditions */
     let weather: [Weather]
 }
+
+// MARK: -
 
 extension ForecastData: WeatherForecast {
 

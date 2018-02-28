@@ -8,13 +8,17 @@
 
 import Foundation
 
+// MARK: -
+
 private enum CsvIndex: Int {
     case date = 0, temp, min, max, description, icon
 }
 
+// MARK: -
+
 struct HourlyForcast: WeatherForecast {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let date: Date
 

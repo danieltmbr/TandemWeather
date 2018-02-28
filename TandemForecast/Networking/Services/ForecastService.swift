@@ -8,6 +8,8 @@
 
 import Foundation
 
+// MARK: - 
+
 protocol WeatherForecast {
 
     var date: Date { get }
@@ -23,6 +25,8 @@ protocol WeatherForecast {
     var iconId: String? { get }
 
 }
+
+// MARK: -
 
 protocol ForecastService {
     func fetchForecasts(for place: Place, callback: @escaping ([WeatherForecast]?, Error?) -> Void)

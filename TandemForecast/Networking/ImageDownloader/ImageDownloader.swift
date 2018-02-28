@@ -8,9 +8,13 @@
 
 import UIKit
 
+// MARK: -
+
 protocol CancelableRequest {
     func cancel()
 }
+
+// MARK: -
 
 protocol ImageFetcher {
 
@@ -19,9 +23,11 @@ protocol ImageFetcher {
     func fetchIcon(id: String, callback: @escaping ImageDownloadCallback) -> CancelableRequest?
 }
 
+// MARK: -
+
 final class ImageDownloader: ImageFetcher {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     private let session: URLSession
 
@@ -56,5 +62,7 @@ final class ImageDownloader: ImageFetcher {
         return dataTask
     }
 }
+
+// MARK: -
 
 extension URLSessionDataTask: CancelableRequest {}

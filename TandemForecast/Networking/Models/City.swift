@@ -8,6 +8,8 @@
 
 import Foundation
 
+// MARK: - 
+
 struct City: Codable {
     
     /** City ID */
@@ -22,6 +24,8 @@ struct City: Codable {
     let population: Int
 
 }
+
+// MARK: -
 
 struct Coord: Codable {
 
